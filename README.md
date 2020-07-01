@@ -4,13 +4,13 @@
 In this study of Spotify Artists, I am choosing “Avadhoot Gupte” as the study artist because I am a big fan of him & his rock songs. Avadhoot Gupte is an Indian music composer and singer who is popularly known for his work in the Marathi film and music industry. His songs generally tend to be loud, energetic, and high-pitched yet melodious. Hence, I expect the same from the statistical analysis on the data as performed further.
 
 ## II. Exploratory Data Analysis
-<img src="images/ggpairs.jpg" alt="drawing" width="800" height="300"/>
+<img src="images/ggpairs.jpg" alt="drawing" width="600" height="300"/>
 
 From the above graph and correlation matrix, we can say that the attributes ‘energy’ & ‘loudness’ have a high linear correlation. Thus, we will be going forward with those 2 attributes.
 
-<img src="images/correlation.jpg" alt="drawing" width="800" height="300"/>
+<img src="images/correlation.jpg" alt="drawing" width="600" height="300"/>
 
-<img src="images/qq plot.jpg" alt="drawing" width="800" height="300"/>
+<img src="images/qq plot.jpg" alt="drawing" width="600" height="300"/>
 
 The plot suggests that the two variables are almost normally distributed. Using the QQ plot, it can be concluded that the Energy variable is more normal as compared to the Loudness variable.
 
@@ -33,7 +33,7 @@ The confidence intervals of energy lie between 0.5738 to 0.67208. This goes acco
 These numbers are also evident from the above density plot, therefore these confidence intervals describe the overall nature of the artist’s music.
 
 #### 2. Two-sample Hypothesis Test on 'Energy'
-<img src="images/two sample hypothesis test.jpg" alt="drawing" width="800" height="300"/>
+<img src="images/two sample hypothesis test.jpg" alt="drawing" width="600" height="300"/>
 
 >  Welch Two Sample t-test  
 
@@ -72,7 +72,7 @@ The p-value of the Welch Two Sample t-test states that we do not have enough evi
 
 The ANOVA test on the loudness parameter with respect to album name says that there is at least 1 pair of albums which have different sample means ie. not all albums follow the null hypothesis (ie. two means are not equal). This can be concluded by observing the p-value = 1.899e-14. This provides significant evidence that not all means are equal. Hence, we statistically reject the Null hypothesis (Significance Level = 0.01).
 
-<img src="images/album-wise loudness distribution.jpg" alt="drawing" width="800" height="300"/>
+<img src="images/album-wise loudness distribution.jpg" alt="drawing" width="600" height="300"/>
 
 From the above graph and Tukey HSD (Honestly Significant Difference) test results, states that there are certain albums whose sample means are the same/similar and thus tend to overlap. On the other hand, there are certain albums whose means are much far away and thus have lesser p-values.
 
@@ -82,7 +82,7 @@ These results make sense because not all albums have the same loudness levels. T
 Now, we fit a linear model of energy Vs. loudness. We expect the relationship to be positively linear, which means that as the energy increases loudness also increases. I felt that ‘energy’ is the independent variable and ‘loudness’ is the dependent variable since the energy level of the song decides its loudness. Hence, I chose predictor & response variables as ‘energy’ & ‘loudness’ respectively.
 
 ##### a. Scatterplot of the variables with the correlation between them
-<img src="images/energy vs loudness.jpg" alt="drawing" width="800" height="300"/>
+<img src="images/energy vs loudness.jpg" alt="drawing" width="600" height="300"/>
 
 The variables energy & loudness follow the positive linear trend with some noise around the regression line. Thus, the correlation between them is 0.78, which is higher (ie. near to 1).
 
@@ -159,17 +159,17 @@ The above table summarizes predicted loudness values for each percentile values 
 
 ##### e. Checking the regression assumptions
 ###### i) Normality of the residuals
-<img src="images/qq plot of residuals.jpg" alt="drawing" width="800" height="300"/>
+<img src="images/qq plot of residuals.jpg" alt="drawing" width="600" height="300"/>
 
 From the QQ-plot, we can interpret that the residuals are normally distributed. There is some deviation at the tails, but that’s expected. Essentially there is not much of a pattern to the deviation from the line except for the tails. Hence, the residuals of our linear model follow the normality assumption.
 
 ###### ii) Assessing Mean & Variance of the residuals
-<img src="images/assess mean variance of residuals.jpg" alt="drawing" width="800" height="300"/>
+<img src="images/assess mean variance of residuals.jpg" alt="drawing" width="600" height="300"/>
 
 The errors are normally distributed and thus the scatter plot has points homogenously distributed along the horizontal line (homoscedastic). Also, the red line almost follows the black line which means that the mean is approximately 0 across the regression line. Also, the plot does not showcase much larger deviations which indicates that the variance is constant across the whole plot.
 Thus, we can confidently say that the linear model fitted using ‘energy’ and ‘loudness’ is valid based on the statistical inferences derived from the assumptions of the residuals.
 
-<img src="images/residual vs leverage.jpg" alt="drawing" width="800" height="300"/>
+<img src="images/residual vs leverage.jpg" alt="drawing" width="600" height="300"/>
 
 From the above “Residuals vs Leverage” plot, we can say that both residuals and leverage are low and thus the model fits well with the predictor variable ‘energy’ in order to predict the dependent variable ‘loudness’.
 
