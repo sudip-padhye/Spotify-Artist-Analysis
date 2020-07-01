@@ -19,9 +19,13 @@ Also, as mentioned previously that this artist has high energetic songs, this is
 ## III. Statistical Analysis
 #### 1. Confidence Intervals of 'Energy' and 'Loudness'
 > [1] 0.5705923 0.6655841 
+
 > attr(,"conf.level") 
+
 > [1] 0.99 ## [1] -9.362246 -7.803519 
+
 > attr(,"conf.level") 
+
 > [1] 0.99
 
 The confidence intervals of energy lie between 0.5738 to 0.67208. This goes according to the trend about the artist where his songs tend to be more energetic. Hence, the confidence interval lies above 50% of the entire energy range(0 to 1). Also, the confidence interval of loudness ranges from -9.3768 to -7.7566, which suggests that the majority of the songs are loud enough. Hence they lie on the upper loudness band on the scale of -60 to 0 dB.
@@ -32,25 +36,39 @@ These numbers are also evident from the above density plot, therefore these conf
 <img src="images/two sample hypothesis test.jpg" alt="drawing" width="800" height="300"/>
 
 >  Welch Two Sample t-test  
+
 >  data: major_data and minor_data 
+
 >  t = -0.3567, df = 56.137, p-value = 0.7227 
+
 >  alternative hypothesis: true difference in means is not equal to 0 
+
 >  99 percent confidence interval: 
+
 >  -0.12795400 0.09775792 
+
 >  sample estimates: 
+
 >  mean of x mean of y 
+
 >  0.6143137 0.6294118
 
 The p-value of the Welch Two Sample t-test states that we do not have enough evidence to reject the null hypothesis. Thus, we accept the null hypothesis where the means of the two groups are the same/similar (Significant level = 0.01). This is also evident from the fact that the energy of the song would not have much impact on the song modality (ie. melodic content). Tracks with Major mode (such as Celebrations, Happy songs) have both high and low energy. This is similar to the Minor mode songs (Eg. – Sorowful songs) where both energy levels are prevalent. Hence, the means of the two-mode groups almost overlap with each other implying that the energy distributions of the two modes follow the same/similar distribution (irrespective of the mode).
 
 #### 3. ANOVA & Pairwise Hypothesis Test
 >  Analysis of Variance Table  
+
 >  Response: loudness 
+
 >  Df Sum Sq Mean Sq F value Pr(>F) 
->  album_name 13 855.98 65.845 10.33 2.048e-14 *** 
+
+>  album_name 13 855.98 65.845 10.33 2.048e-14 
+
 >  Residuals 122 777.67 6.374 
+
 >  --- 
->  Signif. codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+>  Signif. codes: 0 0.001 0.01 0.05 '.' 0.1 ' ' 1
 
 The ANOVA test on the loudness parameter with respect to album name says that there is at least 1 pair of albums which have different sample means ie. not all albums follow the null hypothesis (ie. two means are not equal). This can be concluded by observing the p-value = 1.899e-14. This provides significant evidence that not all means are equal. Hence, we statistically reject the Null hypothesis (Significance Level = 0.01).
 
@@ -70,19 +88,33 @@ The variables energy & loudness follow the positive linear trend with some noise
 
 ##### b. Fitting linear regression model and interpreting the slope & intercept 
 >  Call: 
+
 >  lm(formula = loudness ~ energy, data = data)  
+
 >  Residuals: 
+
 >  Min 1Q Median 3Q Max 
+
 >  -6.4248 -1.2854 0.2168 1.5417 4.5619  
+
 >  Coefficients: 
+
 >  Estimate Std. Error t value Pr(>|t|) 
->  (Intercept) -16.5073 0.5779 -28.57 <2e-16 *** 
->  energy 12.8208 0.8847 14.49 <2e-16 *** 
+
+>  (Intercept) -16.5073 0.5779 -28.57 <2e-16 
+
+>  energy 12.8208 0.8847 14.49 <2e-16 
+
 >  ---
->  Signif. codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+
+>  Signif. codes: 0 0.001 0.01 0.05 '.' 0.1 ' ' 1 
+
 >  
+
 >  Residual standard error: 2.179 on 134 degrees of freedom 
+
 >  Multiple R-squared: 0.6105, Adjusted R-squared: 0.6076 
+
 >  F-statistic: 210 on 1 and 134 DF, p-value: < 2.2e-16
 
 From the above results, we can interpret that the slope of the linear equation is 12.8208, and the intercept is -16.5073. Thus, the linear equation is –
@@ -93,22 +125,34 @@ The y-intercept & slope of the line is the parameters used for fitting the line 
 
 ##### c. Performing hypothesis test to test whether ‘energy’ is the good predictor
 >  Welch Two Sample t-test  
+
 >  data: data$loudness and pred_loudness 
+
 >  t = -1.4078e-14, df = 255.08, p-value = 1 
+
 >  alternative hypothesis: true difference in means is not equal to 0 
+
 >  99 percent confidence interval: 
+
 >  -0.9824214 0.9824214 
+
 >  sample estimates: 
+
 >  mean of x mean of y 
+
 >  -8.582882 -8.582882
 
 The above t-test results with p-value = 1 suggest that the actual and predicted values of the loudness variable follow the same distribution. This provides the strong evidence that the two means are equal and we accept the null hypothesis. Hence, the predictor variable ‘energy’ is a good predictor in the linear model.
 
 ##### d. Predictions at 20th, 40th, 60th & 80th predictor values
 >  energy loudness_predictions 
+
 >  20% 0.445 -10.802013 
+
 >  40% 0.588 -8.968638 
+
 >  60% 0.693 -7.622453 
+
 >  80% 0.826 -5.917286
 
 The above table summarizes predicted loudness values for each percentile values of energy. From the table, we can observe that as the percentile increases energy value also increases with an increase in loudness predictions. This is because of the positive correlation between the variables: energy and loudness.
